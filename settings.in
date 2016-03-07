@@ -1,0 +1,75 @@
+#Title of the simulation
+# title Cylinder-mesh2 
+title Superfine
+
+# Name of the mesh information file
+# minf ../mesh-Cylinder/mesh1/minf
+# minf ../mesh-Cylinder/mesh2/minf
+# minf ../mesh-Rectangle/finemesh/minf
+# minf ../../kk050283_SiScLab/mesh-Rectangle/toymesh/minf
+# minf ../mesh-Rod/mesh1/minf
+#minf ../mesh-Rod/mesh2/minf
+minf ../mesh-Rectangle/superfine/minf
+
+# Name of the coordinates file
+#mxyz ../mesh-Cylinder/mesh1/mxyz
+# mxyz ../mesh-Cylinder/mesh2/mxyz
+# mxyz ../mesh-Rectangle/finemesh/mxyz
+# mxyz ../../kk050283_SiScLab/mesh-Rectangle/toymesh/mxyz
+# mxyz ../mesh-Rod/mesh1/mxyz
+#mxyz ../mesh-Rod/mesh2/mxyz
+mxyz ../mesh-Rectangle/superfine/mxyz.00064
+
+# Name of the connectivity file 
+#mien ../mesh-Cylinder/mesh1/mien
+# mien ../mesh-Cylinder/mesh2/mien
+# mien ../mesh-Rectangle/finemesh/mien
+# mien ../../kk050283_SiScLab/mesh-Rectangle/toymesh/mien
+# mien ../mesh-Rod/mesh1/mien
+#mien ../mesh-Rod/mesh2/mien
+mien ../mesh-Rectangle/superfine/mien.00064
+
+# Name of the boundary information file 
+#mrng ../mesh-Cylinder/mesh1/mrng
+# mrng ../mesh-Cylinder/mesh2/mrng
+# mrng ../mesh-Rectangle/finemesh/mrng
+# mrng ../../kk050283_SiScLab/mesh-Rectangle/toymesh/mrng
+# mrng ../mesh-Rod/mesh1/mrng
+# mrng ../mesh-Rod/mesh2/mrng
+mrng ../mesh-Rectangle/superfine/mrng.00064
+
+# Name of the permutation file
+# mprm ../mesh-Rectangle/finemesh/mprm
+
+# Name of the initial distribution file 
+# data ../mesh-Rectangle/coarsemesh/pres
+
+# Initial value of the temperature
+init 0.0
+
+# Diffusion coefficient
+D 1.0
+
+# Source term (heat generation)
+S 000.0
+
+# Number of face groups
+nfg 4
+
+# Boundary type and value for face groups 
+# Type 1 = Drichlet, Type 2 = Neumann, Type 3 = Mixed
+fg 1 1  0.0
+fg 2 1  0.0
+fg 3 1  100.0 
+fg 4 1  -100.0 
+# Number of iterations
+iter 1 
+
+# Converence in max norm
+tolerance 0.000000001
+
+# Time step
+dt 0.00000001
+
+# Is this a restart? No:0, Yes:1
+restart 0
